@@ -70,9 +70,9 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(TxtUsername);
-        TxtUsername.setBounds(180, 100, 130, 20);
+        TxtUsername.setBounds(180, 100, 130, 30);
         getContentPane().add(TxtFullname);
-        TxtFullname.setBounds(180, 140, 130, 20);
+        TxtFullname.setBounds(180, 140, 130, 30);
 
         BtnRegistrar.setText("Registrar");
         BtnRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -88,9 +88,9 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(BtnRegistrar);
         BtnRegistrar.setBounds(130, 280, 90, 23);
         getContentPane().add(TxtPassword);
-        TxtPassword.setBounds(180, 180, 100, 20);
+        TxtPassword.setBounds(180, 180, 100, 30);
         getContentPane().add(TxtRPassword);
-        TxtRPassword.setBounds(180, 220, 100, 20);
+        TxtRPassword.setBounds(180, 220, 100, 30);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((screenSize.width-382)/2, (screenSize.height-423)/2, 382, 423);
