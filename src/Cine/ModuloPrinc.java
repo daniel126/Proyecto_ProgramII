@@ -34,6 +34,7 @@ public class ModuloPrinc extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Modulo Principal");
         getContentPane().setLayout(null);
 
         BtnAdministrador.setText("Modulo Administrador");

@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class User_Login extends javax.swing.JFrame {
 
     Register Registro = new Register();
-      
+    MenuAdmin menu = new MenuAdmin();
     
     public User_Login() {
         initComponents();
@@ -37,23 +37,23 @@ public class User_Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         BtnRegistrarse = new javax.swing.JButton();
         LblFondo = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Usuarios");
         setBackground(new java.awt.Color(51, 51, 255));
         setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 12)); // NOI18N
         setForeground(new java.awt.Color(255, 153, 0));
         getContentPane().setLayout(null);
 
         TituloSesión.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        TituloSesión.setForeground(new java.awt.Color(255, 255, 255));
+        TituloSesión.setForeground(new java.awt.Color(0, 0, 153));
         TituloSesión.setText("Iniciar sesión");
         TituloSesión.setToolTipText("");
         getContentPane().add(TituloSesión);
-        TituloSesión.setBounds(150, 50, 110, 23);
+        TituloSesión.setBounds(100, 50, 110, 23);
 
         usuario.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        usuario.setForeground(new java.awt.Color(255, 255, 0));
+        usuario.setForeground(new java.awt.Color(102, 102, 0));
         usuario.setText("Usuario:");
         getContentPane().add(usuario);
         usuario.setBounds(50, 90, 60, 30);
@@ -67,7 +67,7 @@ public class User_Login extends javax.swing.JFrame {
         TxtUser.setBounds(80, 120, 140, 30);
 
         pass.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        pass.setForeground(new java.awt.Color(255, 255, 0));
+        pass.setForeground(new java.awt.Color(102, 102, 0));
         pass.setText("Password:");
         getContentPane().add(pass);
         pass.setBounds(50, 160, 70, 20);
@@ -84,8 +84,6 @@ public class User_Login extends javax.swing.JFrame {
         BtnIngresar.setBounds(90, 230, 80, 23);
         BtnIngresar.getAccessibleContext().setAccessibleName("BtnIngresar");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("Nuevo Usuario!");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -93,7 +91,7 @@ public class User_Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(290, 200, 100, 20);
+        jLabel1.setBounds(300, 200, 90, 20);
 
         BtnRegistrarse.setText("Registrarse!");
         BtnRegistrarse.setActionCommand("");
@@ -106,16 +104,11 @@ public class User_Login extends javax.swing.JFrame {
         BtnRegistrarse.setBounds(290, 230, 100, 23);
         BtnRegistrarse.getAccessibleContext().setAccessibleName("BtnRegistrarse");
 
-        LblFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Mando\\Desktop\\Butacas.jpg")); // NOI18N
         getContentPane().add(LblFondo);
-        LblFondo.setBounds(0, -10, 460, 340);
-
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 440, 330);
+        LblFondo.setBounds(0, 10, 430, 320);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-477)/2, (screenSize.height-355)/2, 477, 355);
+        setBounds((screenSize.width-458)/2, (screenSize.height-370)/2, 458, 370);
     }// </editor-fold>//GEN-END:initComponents
 
     private void TxtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtUserActionPerformed
@@ -125,10 +118,8 @@ public class User_Login extends javax.swing.JFrame {
     private void BtnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnIngresarMouseClicked
         // TODO add your handling code here:
         if(Registro.validarInfo(this.TxtUser.getText(), this.TxtPasswordU.getText())){
-            JOptionPane.showMessageDialog(this, "Bienvenido "+this.TxtUser.getText(),"Ingresas",
-                JOptionPane.INFORMATION_MESSAGE);
-            Peliculas peli=new Peliculas();
-            peli.setVisible(true);
+            this.menu.setVisible(true);
+            this.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(this,"La información no existe","Información inválida",
                 JOptionPane.ERROR_MESSAGE);
@@ -137,7 +128,6 @@ public class User_Login extends javax.swing.JFrame {
 
     private void BtnRegistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnRegistrarseMouseClicked
         Registro.setVisible(true);
-        
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnRegistrarseMouseClicked
 
@@ -154,7 +144,6 @@ public class User_Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField TxtPasswordU;
     private javax.swing.JTextField TxtUser;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel pass;
     private javax.swing.JLabel usuario;
     // End of variables declaration//GEN-END:variables
